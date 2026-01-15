@@ -19,7 +19,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-2">
         <Link className={buttonVariants()} href="/auth/login">Login</Link>
-        <Link className={buttonVariants({variant: "outline"})} href="/auth/signup">Sign Up</Link>
+        <Link className={buttonVariants({variant: "outline"})} href="/auth/sign-up">Sign Up</Link>
         <ThemeToggle />
       </div>
     </nav>
