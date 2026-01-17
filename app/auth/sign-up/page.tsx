@@ -1,6 +1,7 @@
 "use client"
 
 import { signUpSchema } from "@/app/schemas/auth";
+import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent} from "@/components/ui/card";
 import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -24,7 +25,7 @@ const SignUpPage = () => {
       </CardHeader>
       <CardContent>
         <form>
-            <FieldGroup>
+            <FieldGroup cl>
                 <Controller 
                     name="name"
                     control={form.control}
@@ -64,6 +65,8 @@ const SignUpPage = () => {
                         </Field>
                     )}
                 />
+
+                <Button>Sign up</Button>
             </FieldGroup>
         </form>
       </CardContent>
