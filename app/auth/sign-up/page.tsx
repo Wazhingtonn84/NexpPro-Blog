@@ -17,6 +17,10 @@ const SignUpPage = () => {
             password: "",
         }
     })
+
+    function onSubmit(){
+        console.log("yoo")
+    }
   return (
     <Card>
       <CardHeader>
@@ -24,15 +28,15 @@ const SignUpPage = () => {
         <CardDescription>Create an Account to get Started</CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
-            <FieldGroup cl>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+            <FieldGroup className="gap-y-4">
                 <Controller 
                     name="name"
                     control={form.control}
                     render={({field, fieldState})=>(
                         <Field>
                             <FieldLabel>Full Name</FieldLabel>
-                            <Input placeholder="Jane Doe" {...field}/>
+                            <Input aria-invalid={fieldState.invalid} placeholder="Jane Doe" {...field}/>
                             {fieldState.invalid && (
                                 <FieldError errors={[fieldState.error]} />
                             )}
@@ -45,7 +49,7 @@ const SignUpPage = () => {
                     render={({field, fieldState})=>(
                         <Field>
                             <FieldLabel>Email</FieldLabel>
-                            <Input placeholder="jane@doe.com" type="email" {...field}/>
+                            <Input aria-invalid={fieldState.invalid} placeholder="jane@doe.com" type="email" {...field}/>
                             {fieldState.invalid && (
                                 <FieldError errors={[fieldState.error]} />
                             )}
@@ -58,7 +62,7 @@ const SignUpPage = () => {
                     render={({field, fieldState})=>(
                         <Field>
                             <FieldLabel>Password</FieldLabel>
-                            <Input placeholder="********" type="password" {...field}/>
+                            <Input aria-invalid={fieldState.invalid} placeholder="********" type="password" {...field}/>
                             {fieldState.invalid && (
                                 <FieldError errors={[fieldState.error]} />
                             )}
